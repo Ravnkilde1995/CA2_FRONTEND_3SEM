@@ -3,11 +3,18 @@ import facade from "../apiFacade";
 
 function Content(){
     const [dataFromServer, setDataFromServer] = useState("Loading...")
+    let books = []
     useEffect(() => { 
-        //const url = "https://www.googleapis.com/books/v1/volumes?q=:keyes&key=AIzaSyCZoXruFbr28UKR2Z6HXgtXqnpRA0shUTk"
         facade.fetchDataGoogle().then(res => {
-            console.log(res);
+            // console.log(res);
             console.log(res.items);
+            if(res.items){
+              res.items.map((item)=>{
+                books.push(item);
+              })
+            }
+            
+            console.log("liste ", books)
           setDataFromServer(res.msg)});
       },[])
   
@@ -15,7 +22,25 @@ function Content(){
       <div>
         <h1>Books</h1>
         <h3>{dataFromServer}</h3>
-        <h4>{}  {}</h4>
+        {books.length < 0 ? 
+        
+        <div>
+          <h1>ikke nogen bøger</h1>
+        </div>
+        : <>
+        <h1> der er bøger </h1>
+        {books.map((item)=>{
+          console.log("hello hello", item)
+          return(
+            <>
+            <p>{item}</p>
+            </>
+          )
+        })}
+        
+        </>
+      }
+        
       </div>
     )
   }
