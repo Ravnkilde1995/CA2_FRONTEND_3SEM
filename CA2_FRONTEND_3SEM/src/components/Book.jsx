@@ -21,7 +21,7 @@ function Content() {
   return (
     <div>
       <br></br>
-      <h1>Books</h1>
+      <h1>Books fetched from google</h1>
       <h3>{dataFromServer}</h3>
 
       {/*Vi mapper hvert item vi har fetchet */}

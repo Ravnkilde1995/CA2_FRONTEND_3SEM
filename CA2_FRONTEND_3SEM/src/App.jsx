@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import facade from "./apiFacade";
 import LogIn from "./components/LoginForm";
 import LoggedIn from "./components/LoggedIn";
-import Book from "./components/Book";
 import Header from "./components/Header";
+
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,7 +20,12 @@ function App() {
       setUser({ username: token.username, roles: token.roles });
       setLoggedIn(true);
     });
+
+    
+  
   };
+
+
 
   return (
     // dette er et react if/else statement
@@ -38,7 +43,6 @@ function App() {
 
           <LoggedIn user={user} />
           <button onClick={logout}>Logout</button>
-          <Book />
         </div>
       )}
     </div>

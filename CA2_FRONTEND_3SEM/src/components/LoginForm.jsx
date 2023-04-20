@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 function LogIn({ login, logout }) {
   const init = { username: "", password: "" };
   const [loginCredentials, setLoginCredentials] = useState(init);
@@ -18,12 +17,17 @@ function LogIn({ login, logout }) {
 
   return (
     <>
-      <div style={{display:"flex", justifyContent: "center"}}>
-              <form onChange={onChange}>
-                <input placeholder="User Name" id="username" />
-                <input placeholder="Password" id="password" />
-                <button onClick={performLogin}>Login</button>
-              </form>
+    <br />
+    <div style={{display: "flex", justifyContent: "center"}}>
+      <h3>Login form</h3>
+    </div>
+    <br />
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <form onChange={onChange}>
+          <input placeholder="User Name" id="username" />
+          <input placeholder="Password" id="password" />
+          <button onClick={performLogin}>Login</button>
+        </form>
       </div>
     </>
   );

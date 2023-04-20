@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react"
-import facade from "./apiFacade";
 
 
-function About({user}) {
-  const [dataFromServer, setDataFromServer] = useState("Loading...");
-    
-  useEffect(() =>{
-    const url = user.roles.split(',').includes('user') ? 'api/info/user' : 'api/info/admin'
-    facade.fetchData(url).then(res => {
-        console.log(res);
-        setDataFromServer(res.msg)});
-    }, [] )
+function About() {
 
 
-  return (
+  return (  
     <div>
-     {dataFromServer}
+      {
+
+      }
      <h1>About</h1>
+     <p>On this single page application, you can get an overview of some of the books that you can find on google's api.</p>
     </div>
   );
 }

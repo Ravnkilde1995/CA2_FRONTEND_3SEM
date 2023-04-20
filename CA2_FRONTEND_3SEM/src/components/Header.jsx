@@ -1,11 +1,13 @@
 import { NavLink } from "react-router-dom";
-import LogIn from "./LoginForm";
-import LoggedIn from "./LoggedIn";
 
 const Header = ({}) => {
-     return (<ul className="header">
-      <li><NavLink to="/">Home</NavLink></li>
+  return (
+    <>
+      <ul className="header">
       <li><NavLink to="/about">About</NavLink></li> 
-     </ul>)
-  }
+      <li><NavLink to="/book">Book</NavLink></li>
+     </ul>
+    </>
+  );
+};
 export default Header;

@@ -1,7 +1,7 @@
 function Content() {
   return (
     <div>
-      <h1>Hallo mand</h1>
+      <h1></h1>
     </div>
   );
 }

@@ -82,7 +82,7 @@ function readJwtToken (token) {
      fetchData,
      fetchDataGoogle,
      readJwtToken,
-     //book,
+    //  book,
  }
 }
 const facade = apiFacade();
