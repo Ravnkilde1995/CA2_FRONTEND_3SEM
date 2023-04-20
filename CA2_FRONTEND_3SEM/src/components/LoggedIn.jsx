@@ -3,11 +3,12 @@ import facade from "../apiFacade";
 function LoggedIn({user}){
     const [dataFromServer, setDataFromServer] = useState("Loading...")
     useEffect(() => { 
-      const url = user.roles.split(',').includes('user') ? '/api/info/user' : '/api/info/admin';
+      const url = user.roles.split(',').includes('user') ? 'api/info/user' : 'api/info/admin';
       facade.fetchData(url).then(res => {
         console.log(res);
         setDataFromServer(res.msg)});
     },[])
+
   
     return (
       <div>

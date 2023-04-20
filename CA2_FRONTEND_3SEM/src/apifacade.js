@@ -1,4 +1,5 @@
 const URL = "http://localhost:8080/";
+const GoogleURL = "https://www.googleapis.com/books/v1/volumes?q=:keyes&key=AIzaSyCZoXruFbr28UKR2Z6HXgtXqnpRA0shUTk"
 
 function handleHttpErrors(res) {
  if (!res.ok) {
@@ -18,9 +19,15 @@ const login = (user, password) => {
       .then(res => {setToken(res.token) })
 }
 
+
 const fetchData = (ressource) => {
     const options = makeOptions("GET",true); //True add's the token
    return fetch(URL + ressource, options).then(handleHttpErrors);
+}
+
+const fetchDataGoogle = () => {
+  const options = makeOptions("GET");
+ return fetch(GoogleURL, options).then(handleHttpErrors);
 }
 const makeOptions= (method,addToken,body) =>{
    var opts = {
@@ -73,7 +80,9 @@ function readJwtToken (token) {
      login,
      logout,
      fetchData,
+     fetchDataGoogle,
      readJwtToken,
+     //book,
  }
 }
 const facade = apiFacade();

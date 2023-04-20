@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react"
 import facade from "./apiFacade";
 import LogIn from "./components/LoginForm";
 import LoggedIn from "./components/LoggedIn";
+import Book from "./components/Book";
+import Header from "./components/Header";
+import Button from 'react-bootstrap/Button';
 
 
 function App() {
@@ -22,11 +25,15 @@ function App() {
   }
 
   return (
+    // dette er et react if/else statement
     <div>
       {!loggedIn ? (<LogIn login={login} />) :
         (<div>
+          <Header />
           <LoggedIn user={user} />
           <button onClick={logout}>Logout</button>
+          <Book />
+
         </div>)}
     </div>
   )
